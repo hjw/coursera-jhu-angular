@@ -1,10 +1,10 @@
 (function() {
   'use strict';
-  angular.module('week1App', [])
-  .controller('LunchController', LunchController);
+  angular.module('LunchCheck', [])
+  .controller('LunchCheckController', LunchCheckController);
 
-  LunchController.$inject =['$scope'];
-  function LunchController($scope) {
+  LunchCheckController.$inject =['$scope'];
+  function LunchCheckController($scope) {
     $scope.lunch_items = "";
     $scope.diet_minder = "";
     $scope.countItems = function() {
