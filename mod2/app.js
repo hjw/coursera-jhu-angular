@@ -35,10 +35,11 @@
                     {quantity: 3, name: 'chips'},
                     {quantity: 4, name: 'chips'},
                     {quantity: 6, name: 'chips'} ];
-    var bought_items=[{quantity: 2, name: 'carrots'},
-                    {quantity: 3, name: 'carrots'},
-                    {quantity: 4, name: 'carrots'},
-                    {quantity: 6, name: 'carrots'} ];
+    var bought_items=[];
+    // [{quantity: 2, name: 'carrots'},
+    //                 {quantity: 3, name: 'carrots'},
+    //                 {quantity: 4, name: 'carrots'},
+    //                 {quantity: 6, name: 'carrots'} ];
     
 
     service.addItemToBuy = function(item_name, item_qty) {
