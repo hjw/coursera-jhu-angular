@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="ShoppingListCheckoff" lang="en">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/week2.css">
+
+
+  </head>
+<body >
+  <div ng-controller="ToBuyController as buyList" class="container">
+    <h1>Shopping List Check Off</h1>
+    <ul>
+       <li ng-repeat="item in buyList.items">{{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       
+     </ul>
+</div>
+
+ <script src="angular.min.js"></script>
+<script src="app.js" ></script>
+</body>
+</html>

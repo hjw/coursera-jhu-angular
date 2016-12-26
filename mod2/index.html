@@ -19,17 +19,18 @@
     <div ng-controller="ToBuyController as buyList" class="col-md-6">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in buyList.items">{{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in buyList.items">{{item.quantity}} {{item.name}} <button ng-click="buyList.markBought($index)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
        
      </ul>
      <div class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
-    <div ng-controller="AlreadyBoughtController" class="col-md-6">
+    <div ng-controller="AlreadyBoughtController as bought" class="col-md-6">
      <h2>Already Bought:</h2>
      <ul>
-       <li>Bought 10 cookies</li>
+       <li ng-repeat="item in bought.items">
+        {{item.quantity}} {{item.name}} </li>
      </ul>
      <div class="emptyMessage">Nothing bought yet.</div>
     </div>
