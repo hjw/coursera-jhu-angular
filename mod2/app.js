@@ -9,11 +9,10 @@
     .service('ShoppingListCheckoffService', ShoppingListCheckoffService);
 
    ToBuyController.$inject = ['ShoppingListCheckoffService'];
-
    function ToBuyController(ShoppingListCheckoffService) {
     var buyList = this;
-    buyList.message = "hello hawley.";
     buyList.items = ShoppingListCheckoffService.getItemsToBuy();
+    
     buyList.markBought = function(index){
       ShoppingListCheckoffService.markItemAsBought(index);
     };
@@ -21,7 +20,6 @@
   
 
   AlreadyBoughtController.$inject = ['ShoppingListCheckoffService'];
-
   function AlreadyBoughtController(ShoppingListCheckoffService) {
     var boughtList = this;
     boughtList.items = ShoppingListCheckoffService.getItemsBought();
@@ -31,17 +29,14 @@
   function ShoppingListCheckoffService() {
     var service = this;
 
-    var items_to_buy= [{quantity: 2, name: 'choco bombs'},
-                    {quantity: 3, name: 'chips'},
-                    {quantity: 4, name: 'chips'},
-                    {quantity: 6, name: 'chips'} ];
+    var items_to_buy= [{quantity: 2, name: 'potatoes'},
+                    {quantity: 3, name: 'onions'},
+                    {quantity: 4, name: 'eggs'},
+                    {quantity: 1, name: 'flour'},
+                    {quantity: 2, name: 'oil'},
+                    {quantity: 1, name: 'box of candles'} ];
     var bought_items=[];
-    // [{quantity: 2, name: 'carrots'},
-    //                 {quantity: 3, name: 'carrots'},
-    //                 {quantity: 4, name: 'carrots'},
-    //                 {quantity: 6, name: 'carrots'} ];
     
-
     service.addItemToBuy = function(item_name, item_qty) {
       var item = { 
         name: item_name,
