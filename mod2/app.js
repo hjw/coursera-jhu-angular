@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   /**
-   * ShoppListCheckoff Module
+   * ShoppingListCheckoff Module
    */
    angular.module('ShoppingListCheckoff', [])
     .controller('ToBuyController', ToBuyController)

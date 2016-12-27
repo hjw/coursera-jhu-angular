@@ -1,23 +1,50 @@
-<!doctype html>
-<html ng-app="ShoppingListCheckoff" lang="en">
-  <head>
-    <title>Shopping List Check Off</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/week2.css">
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 2</title>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/week2.css">
+</head>
 
-  </head>
-<body >
-  <div ng-controller="ToBuyController as buyList" class="container">
-    <h1>Shopping List Check Off</h1>
-    <ul>
-       <li ng-repeat="item in buyList.items">{{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-       
-     </ul>
-</div>
+<body ng-app="ShoppingListCheckoff">
+  <div class="container">
+    <h1>Shopping List Checkoff</h1>
+    <div class="row">
+      
+      <div ng-controller="ToBuyController as buyList" class="col-md-4 col-lg-4">
+        <h2>Items to Buy:</h2>
+        <ul id="toBuy">
+          <li ng-repeat="item in buyList.items">
+            {{item.quantity}} {{item.name}}
+            <button ng-click="buyList.markBought($index)" class="btn btn-default ">
+              <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span> Bought </button>
+          </li>
+        </ul>
+        <div ng-if="buyList.items.length == 0" class="alert alert-success">
+          Your shopping is done... head home to eat!
+        </div>
+      </div>
 
- <script src="angular.min.js"></script>
-<script src="app.js" ></script>
+      <div ng-controller="AlreadyBoughtController as boughtList" class="col-md-4 col-md-offset-2">
+        <h2>Items I've Bought:</h2>
+        <ul class="list-unstyled">
+          <li ng-repeat="item in boughtList.items">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+            <s>{{item.quantity}} {{item.name}}</s>
+          </li>
+        </ul>
+        <div ng-if="boughtList.items.length == 0" class="alert alert-info">
+          Nothing bought yet... get shopping so you can head home to eat!
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="angular.min.js" type="text/javascript"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,18 +1,25 @@
- .emptyMessage {
+ .alert {
    font-weight: bold;
-   color: red;
    font-size: 1.2em;
  }
  
  li {
-   margin-bottom: 7px;
    font-size: 1.2em;
+ }
+ 
+ #toBuy > li {
+   margin-bottom: 7px;
+   list-style-type: circle;
  }
  
  li > button {
    margin-left: 6px;
  }
  
- button > span {
+ li > span {
    color: green;
+ }
+ 
+ button > span {
+   color: tan;
  }
