@@ -8,8 +8,11 @@
   <link rel="stylesheet" href="styles/week3.css">
 </head>
 <body ng-app="NarrowItDownApp">
-  <div class="container">
     <h1>Narrow It Down</h1>
+  <div ng-controller="NarrowItDownController as winnow" class="container">
+    <input ng-bind="winnow.searchTerm" type="text" name="">
+    <button type="button">Narrow It Down For Me!</button>
+    
 
 
   </div>
