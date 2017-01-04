@@ -1,8 +1,9 @@
 
-{{console.log("in template ", myItems)}}
+<br> in template list is : {{list}}
+
 <ul>
-  <li  ng-repeat="item in myItems">
+  <li ng-repeat="item in list">
   <button>Don't want this one!</button>
     {{item.short}}, {{item.name}}, {{item.description}}
   </li>
-</ul>
+</ul>   

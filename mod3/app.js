@@ -8,14 +8,14 @@
   angular.module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
-    .directive('foundItems',FoundItems)
+    .directive('narrowItDown',NarrowItDown)
     .constant('menuServerURL', 'https://davids-restaurant.herokuapp.com/menu_items.json');
 
-  function FoundItems(){
+  function NarrowItDown(){
     var ddo = {
-      templateUrl: 'found-items.html',
+      templateUrl: 'narrowItDown.html',
       prop: {
-        myList: '=myItems'
+        list: '=myItems'
       }
     };
     return ddo;
@@ -48,15 +48,18 @@
 
   function NarrowItDownController(MenuSearchService) {
     var winnow = this;
-    winnow.found = "";
-    winnow.searchTerm = "";
+    winnow.found = "starting value for winnow.found";
+    // dummy search term for debugging, 
+    winnow.searchTerm = "ch"; 
+    // winnow.searchTerm = ""; 
+
     winnow.match_attempted = false;
     
     winnow.findMatch = function() {
       winnow.match_attempted |=  true ;
       winnow.found = [];
       if (winnow.searchTerm.length > 0) {
-        var promise = MenuSearchService.getMatchedMenuItems(winnow.searchTerm);
+        var promise = MenuSearchService.getMatchedMenuItems("tofu");
         promise.then(function(foundItems) {
           winnow.found = foundItems;
         });
