@@ -6,16 +6,6 @@ article{
   padding-left: 10px;
 }
 
-
-ul>li{
-  list-style: none;
-  display: inline-block;
-  border: 2px solid black;
-  position: relative;
-  margin:5px;
-  margin-bottom: 20px;
-}
-
 .fixed-height{
   height:10em;
 }

@@ -1,12 +1,14 @@
 <h3>{{title}} ({{items.length}})</h3>
 <div class="row" >
-  <div class="col-sm-6 fixed-height" ng-repeat="item in items">
+
+  <div ng-repeat="item in items" class="col-sm-6 fixed-height" >
     <div class="menu-choice h-100">
-      <div class="myaction">
+      <section class="myaction">
         <button class="full-width" ng-click="remove({message:$index})" class="">
           <span class="glyphicon glyphicon-remove-sign "></span> Don't want this one!
         </button>
-      </div>
+      </section>
+
       <section class="menu-item">
         <h4 class="item-title">{{item.short_name}}. {{item.name}} </h4>
         <article>
@@ -15,5 +17,5 @@
       </section>
     </div>
   </div>
-    <span class="clearfix"></span>
+
 </div>

@@ -28,7 +28,7 @@
     var winnow = this;
     winnow.found = "";
     
-    winnow.searchTerm = "tofu";
+    winnow.searchTerm = "";
     winnow.match_attempted = false;
 
     winnow.removeItem = function(index){
