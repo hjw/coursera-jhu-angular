@@ -58,8 +58,9 @@
         })
         .then(function(result) {
           var foundItems = [];
+          searchTerm = searchTerm.toLowerCase();
           for (var i = 0, len = result.data.menu_items.length; i < len; i++) {
-            var found = result.data.menu_items[i].description.indexOf(searchTerm);
+            var found = result.data.menu_items[i].description.toLowerCase().indexOf(searchTerm);
             if (found != -1) {
               foundItems.push(result.data.menu_items[i]);
             }
